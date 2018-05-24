@@ -1,0 +1,19 @@
+#header {
+font-weight: bold;
+font-size: 25px;
+padding-bottom: 200px;
+}
+
+#search-text {
+padding-top: 15px;
+font-weight: lighter;
+font-size: 15px;
+white-space: 10px;
+}
+
+button,
+div,
+form,
+input {
+margin: 10px;
+}
