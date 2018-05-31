@@ -55,18 +55,30 @@ function addClickListenerToButton(button) {
             var results = response.data;
             console.log(results);
 
+
+
             for (var i = 0; i < results.length; i++) {
+
+                var animate = results[i].images.fixed_height.url;
+                var still = results[i].images.fixed_width_still.url;
+                //here is where I want to pull the still and animated images and store them in variables
+                console.log(still);
                 var newDiv = $("<div>");
                 var rating = results[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 console.log(rating);
                 var giphyImage = $("<img>");
-                giphyImage.attr("src", results[i].images.fixed_height.url);
+                giphyImage.attr("src", animate);
                 giphyImage.attr("alt", "athlete");
                 newDiv.append(p, giphyImage);
                 $("#athletes-view").prepend(newDiv);
             }
-
+                //outside of the for loop I want to run an onclick where when the user clicks on the images it pauses and starts them
+                //I tried this a couple of times unsuccessfully over the weekend. Everything else works great! 
         });
+
+        $("#athletes-view").on("click", function(event) {
+            var animation = $(this).attr(animate);
+        })
     });
 }
